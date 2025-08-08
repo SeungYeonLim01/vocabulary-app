@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>단어장</title>
+    
+    <!-- CSS 파일들 연결 -->
+    <link rel="stylesheet" href="0acef4df005bbe6c.css">
+    <link rel="stylesheet" href="26f77046fab6335d.css">
+    <link rel="stylesheet" href="9b9b8286a1944f60.css">
+    <link rel="stylesheet" href="ddfd84d4766fc38f.css">
+    <link rel="stylesheet" href="e2cf08a32e0ac885.css">
+    
+    <style>
+        /* 기본 스타일 */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+        }
+        
+        .container {
+            max-width: 100%;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 0px;
+            box-shadow: none;
+            margin-bottom: 20px;
+        }
+        
+        .header h1 {
+            color: #000000;
+            margin: 0;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        
+        .content {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 0px;
+            box-shadow: none;
+            min-height: calc(100vh - 140px);
+        }
+        
+        .search-section {
+            background-color: #FAFBFC;
+            padding: 30px 20px;
+            border-radius: 7px;
+            margin-bottom: 20px;
+        }
+        
+        .search-form {
+            display: flex;
+            gap: 30px;
+            align-items: end;
+        }
+        
+        .search-input-group {
+            flex: 1;
+            display: flex;
+            gap: 3px;
+        }
+        
+        .search-input {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            padding: 10px 12px;
+            gap: 10px;
+            background-color: white;
+            border: 1px solid #E4E4E4;
+            border-radius: 5px;
+        }
+        
+        .search-input input {
+            flex: 1;
+            border: none;
+            outline: none;
+            font-size: 14px;
+            background: transparent;
+        }
+        
+        .search-input input::placeholder {
+            color: #999999;
+        }
+        
+        .date-range {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            width: 360px;
+        }
+        
+        .date-input {
+            flex: 1;
+            position: relative;
+        }
+        
+        .date-input input {
+            width: 100%;
+            height: 40px;
+            border-radius: 5px;
+            border: 1px solid #E4E4E4;
+            background-color: white;
+            padding: 0 30px 0 12px;
+            font-size: 14px;
+        }
+        
+        .date-input input::placeholder {
+            color: #999999;
+        }
+        
+        .search-button {
+            width: 110px;
+            height: 40px;
+            background-color: white;
+            border: 1px solid #E4E4E4;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        
+        .search-button:hover {
+            background-color: #f5f5f5;
+        }
+        
+        .search-button span {
+            font-size: 14px;
+            font-weight: bold;
+            color: #353535;
+        }
+        
+        .table-section {
+            margin-top: 40px;
+        }
+        
+        .table-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        
+        .table-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 0;
+        }
+        
+        .table-actions {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .action-button {
+            width: 110px;
+            height: 40px;
+            border: 1px solid #E4E4E4;
+            border-radius: 5px;
+            background-color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        
+        .action-button:hover {
+            background-color: #f5f5f5;
+        }
+        
+        .delete-button {
+            background-color: #ef4444;
+            color: white;
+            border-color: #ef4444;
+        }
+        
+        .delete-button:hover {
+            background-color: #dc2626;
+        }
+        
+        .table-container {
+            border: 1px solid #e5e7eb;
+            border-radius: 0px;
+            background-color: white;
+            overflow: hidden;
+            height: calc(100vh - 400px);
+            overflow-y: auto;
+        }
+        
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+            table-layout: fixed;
+        }
+        
+        .table th {
+            background-color: rgba(0,0,0,0.01);
+            padding: 12px 16px;
+            text-align: left;
+            font-weight: bold;
+            border-bottom: 1px solid #e5e7eb;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+        
+        .table td {
+            padding: 12px 16px;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        
+        .table tr:hover {
+            background-color: #f9fafb;
+        }
+        
+        .checkbox {
+            width: 16px;
+            height: 16px;
+            border: 1px solid #9ca3af;
+            border-radius: 3px;
+            background-color: white;
+        }
+        
+        .star-button {
+            width: 20px;
+            height: 20px;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>') center/contain no-repeat;
+            border: none;
+            cursor: pointer;
+            opacity: 0.3;
+        }
+        
+        .star-button:hover {
+            opacity: 1;
+        }
+        
+        .star-button.active {
+            opacity: 1;
+            color: #fbbf24;
+        }
+        
+        .error-badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 2px 8px;
+            background-color: #fef2f2;
+            color: #dc2626;
+            border-radius: 9999px;
+            font-size: 12px;
+            font-weight: 500;
+            margin-left: 8px;
+        }
+        
+        .pagination {
+            display: flex;
+            justify-content: center;
+            gap: 4px;
+            margin-top: 20px;
+            position: sticky;
+            bottom: 0;
+            background-color: white;
+            padding: 10px 0;
+        }
+        
+        .pagination-button {
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #e5e7eb;
+            background-color: white;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .pagination-button:hover {
+            background-color: #f9fafb;
+        }
+        
+        .pagination-button.active {
+            background-color: #3b82f6;
+            color: white;
+            border-color: #3b82f6;
+        }
+        
+        .pagination-button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        
+        .download-button {
+            width: 40px;
+            height: 40px;
+            border: 1px solid #e5e7eb;
+            border-radius: 6px;
+            background-color: white;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+            margin: 0 auto;
+        }
+        
+        .download-button:hover {
+            background-color: #f9fafb;
+            border-color: #d1d5db;
+        }
+        
+        .download-icon {
+            width: 20px;
+            height: 20px;
+            background-image: url('assets/icons/import.svg');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+        
+        .table a {
+            transition: color 0.2s;
+        }
+        
+        .table a:hover {
+            color: #3b82f6 !important;
+            text-decoration: underline !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>단어장</h1>
+        </div>
+        
+        <div class="content">
+            <!-- 검색 섹션 -->
+            <div class="search-section">
+                <form class="search-form">
+                    <div class="search-input-group">
+                        <div class="search-input">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <path d="m21 21-4.3-4.3"></path>
+                            </svg>
+                            <input type="text" placeholder="자료명을 입력해주세요.">
+                        </div>
+                    </div>
+                    
+                    <div class="date-range">
+                        <div class="date-input">
+                            <input type="text" placeholder="연도, 월, 일">
+                            <svg style="position: absolute; right: 12px; top: 50%; transform: translateY(-50%);" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M8 2v4"></path>
+                                <path d="M16 2v4"></path>
+                                <rect width="18" height="18" x="3" y="4" rx="2"></rect>
+                                <path d="M3 10h18"></path>
+                            </svg>
+                        </div>
+                        <span>~</span>
+                        <div class="date-input">
+                            <input type="text" placeholder="연도, 월, 일">
+                            <svg style="position: absolute; right: 12px; top: 50%; transform: translateY(-50%);" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M8 2v4"></path>
+                                <path d="M16 2v4"></path>
+                                <rect width="18" height="18" x="3" y="4" rx="2"></rect>
+                                <path d="M3 10h18"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="search-button">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <path d="m21 21-4.3-4.3"></path>
+                        </svg>
+                        <span>검색</span>
+                    </button>
+                </form>
+            </div>
+            
+            <!-- 테이블 섹션 -->
+            <div class="table-section">
+                <div class="table-header">
+                    <h2 class="table-title">총 42개</h2>
+                    <div class="table-actions">
+                        <button class="action-button">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"></polygon>
+                            </svg>
+                            즐겨찾기
+                        </button>
+                        <button class="action-button delete-button">삭제</button>
+                    </div>
+                </div>
+                
+                <div class="table-container">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th style="width: 3%;">
+                                    <input type="checkbox" class="checkbox">
+                                </th>
+                                <th style="width: 10%; text-align: center;">즐겨찾기</th>
+                                <th style="width: 55%;">자료명</th>
+                                <th style="width: 15%; text-align: center;">단어 수</th>
+                                <th style="width: 15%; text-align: center;">생성일</th>
+                                <th style="width: 10%; text-align: center;">다운로드</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><input type="checkbox" class="checkbox"></td>
+                                <td style="text-align: center;">
+                                    <button class="star-button"></button>
+                                </td>
+                                <td style="color: #dc2626;">
+                                    <a href="detail.html?id=1" style="text-decoration: none; color: inherit; cursor: pointer;">2024학년도 랜덤 1학년 1학기 중간고사 단어장</a>
+                                    <span class="error-badge">오류</span>
+                                </td>
+                                <td style="text-align: center;">0 단어</td>
+                                <td style="text-align: center;">2025-08-07 10:41</td>
+                                <td style="text-align: center;">
+                                    <button class="download-button">
+                                        <div class="download-icon"></div>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" class="checkbox"></td>
+                                <td style="text-align: center;">
+                                    <button class="star-button"></button>
+                                </td>
+                                <td><a href="detail.html?id=2" style="text-decoration: none; color: inherit; cursor: pointer;">2025학년도 ㅇㅎ중학교 1학년 1학기 중간고사 단어장</a></td>
+                                <td style="text-align: center;">6 단어</td>
+                                <td style="text-align: center;">2025-08-07 10:14</td>
+                                <td style="text-align: center;">
+                                    <button class="download-button">
+                                        <div class="download-icon"></div>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" class="checkbox"></td>
+                                <td style="text-align: center;">
+                                    <button class="star-button"></button>
+                                </td>
+                                <td><a href="detail.html?id=3" style="text-decoration: none; color: inherit; cursor: pointer;">2023학년도 유형고등학교 1학년 1학기 중간고사 단어장</a></td>
+                                <td style="text-align: center;">10 단어</td>
+                                <td style="text-align: center;">2025-08-07 10:04</td>
+                                <td style="text-align: center;">
+                                    <button class="download-button">
+                                        <div class="download-icon"></div>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" class="checkbox"></td>
+                                <td style="text-align: center;">
+                                    <button class="star-button"></button>
+                                </td>
+                                <td><a href="detail.html?id=4" style="text-decoration: none; color: inherit; cursor: pointer;">2024학년도 랜덤1중학교 1학년 1학기 중간고사 단어장</a></td>
+                                <td style="text-align: center;">6 단어</td>
+                                <td style="text-align: center;">2025-08-07 09:57</td>
+                                <td style="text-align: center;">
+                                    <button class="download-button">
+                                        <div class="download-icon"></div>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" class="checkbox"></td>
+                                <td style="text-align: center;">
+                                    <button class="star-button"></button>
+                                </td>
+                                <td><a href="detail.html?id=5" style="text-decoration: none; color: inherit; cursor: pointer;">2025학년도 유형끼리중학교 1학년 1학기 중간고사 단어장</a></td>
+                                <td style="text-align: center;">4 단어</td>
+                                <td style="text-align: center;">2025-08-07 09:49</td>
+                                <td style="text-align: center;">
+                                    <button class="download-button">
+                                        <div class="download-icon"></div>
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <!-- 페이지네이션 -->
+                <div class="pagination">
+                    <button class="pagination-button" disabled>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M11 19l-7-7 7-7 M18 19l-7-7 7-7"></path>
+                        </svg>
+                    </button>
+                    <button class="pagination-button" disabled>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M15 19l-7-7 7-7"></path>
+                        </svg>
+                    </button>
+                    <button class="pagination-button active">1</button>
+                    <button class="pagination-button">2</button>
+                    <button class="pagination-button">3</button>
+                    <button class="pagination-button">4</button>
+                    <button class="pagination-button">5</button>
+                    <button class="pagination-button">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M9 5l7 7-7 7"></path>
+                        </svg>
+                    </button>
+                    <button class="pagination-button">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M13 5l7 7-7 7 M6 5l7 7-7 7"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,765 @@
+:root {
+    --print-base-line-height: 40px;
+    --print-base-line-height-increment: 5px
+}
+
+.syntax-analyze-main-container.print.max-level-1 {
+    line-height: var(--print-base-line-height)
+}
+
+.syntax-analyze-main-container.print.max-level-2 {
+    line-height: calc(var(--print-base-line-height) + var(--print-base-line-height-increment))
+}
+
+.syntax-analyze-main-container.print.max-level-3 {
+    line-height: calc(var(--print-base-line-height) + var(--print-base-line-height-increment) * 2)
+}
+
+.syntax-analyze-main-container.print.max-level-4 {
+    line-height: calc(var(--print-base-line-height) + var(--print-base-line-height-increment) * 3)
+}
+
+.syntax-analyze-main-container.print.max-level-5 {
+    line-height: calc(var(--print-base-line-height) + var(--print-base-line-height-increment) * 4)
+}
+
+.syntax-analyze-main-container.print.max-level-6 {
+    line-height: calc(var(--print-base-line-height) + var(--print-base-line-height-increment) * 5)
+}
+
+.syntax-analyze-main-container.print.max-level-7 {
+    line-height: calc(var(--print-base-line-height) + var(--print-base-line-height-increment) * 6)
+}
+
+.syntax-analyze-main-container.print.max-level-8 {
+    line-height: calc(var(--print-base-line-height) + var(--print-base-line-height-increment) * 7)
+}
+
+.syntax-analyze-main-container.print.max-level-9 {
+    line-height: calc(var(--print-base-line-height) + var(--print-base-line-height-increment) * 8)
+}
+
+.syntax-analyze-main-container.print.max-level-10 {
+    line-height: calc(var(--print-base-line-height) + var(--print-base-line-height-increment) * 9)
+}
+
+:root {
+    --print-base-bot-level-top: -2px;
+    --print-base-bot-level-top-increment: -2px
+}
+
+.syntax-analyze-main-container.print.max-bot-level-1 {
+    top: var(--print-base-bot-level-top)
+}
+
+.syntax-analyze-main-container.print.max-bot-level-2 {
+    top: calc(var(--print-base-bot-level-top) + var(--print-base-bot-level-top-increment))
+}
+
+.syntax-analyze-main-container.print.max-bot-level-3 {
+    top: calc(var(--print-base-bot-level-top) + var(--print-base-bot-level-top-increment) * 2)
+}
+
+.syntax-analyze-main-container.print.max-bot-level-4 {
+    top: calc(var(--print-base-bot-level-top) + var(--print-base-bot-level-top-increment) * 3)
+}
+
+.syntax-analyze-main-container.print.max-bot-level-5 {
+    top: calc(var(--print-base-bot-level-top) + var(--print-base-bot-level-top-increment) * 4)
+}
+
+:root {
+    --print-base-bot-line-padding: 0px;
+    --print-base-bot-line-padding-increment: 10px
+}
+
+.syntax-analyze-main-container.print .under_line[data-range-bot-level="1"] {
+    padding-bottom: var(--print-base-bot-line-padding)
+}
+
+.syntax-analyze-main-container.print .under_line[data-range-bot-level="2"] {
+    padding-bottom: calc(var(--print-base-bot-line-padding) + var(--print-base-bot-line-padding-increment))
+}
+
+.syntax-analyze-main-container.print .under_line[data-range-bot-level="3"] {
+    padding-bottom: calc(var(--print-base-bot-line-padding) + var(--print-base-bot-line-padding-increment) * 2)
+}
+
+.syntax-analyze-main-container.print .under_line[data-range-bot-level="4"] {
+    padding-bottom: calc(var(--print-base-bot-line-padding) + var(--print-base-bot-line-padding-increment) * 3)
+}
+
+.syntax-analyze-main-container.print .under_line[data-range-bot-level="5"] {
+    padding-bottom: calc(var(--print-base-bot-line-padding) + var(--print-base-bot-line-padding-increment) * 4)
+}
+
+:root {
+    --print-base-bot-level-1: -4px;
+    --print-base-bot-level-2: 6px;
+    --print-base-bot-level-3: 16px;
+    --print-base-bot-level-4: 24px;
+    --print-base-bot-level-5: 32px;
+    --print-base-bot-level-increment: 2.5px
+}
+
+.syntax-analyze-main-container.print.max-level-1 .under_line[data-range-bot-level="1"]:before {
+    top: var(--print-base-bot-level-1)
+}
+
+.syntax-analyze-main-container.print.max-level-1 .under_line[data-range-bot-level="2"]:before {
+    top: var(--print-base-bot-level-2)
+}
+
+.syntax-analyze-main-container.print.max-level-1 .under_line[data-range-bot-level="3"]:before {
+    top: var(--print-base-bot-level-3)
+}
+
+.syntax-analyze-main-container.print.max-level-1 .under_line[data-range-bot-level="4"]:before {
+    top: var(--print-base-bot-level-4)
+}
+
+.syntax-analyze-main-container.print.max-level-1 .under_line[data-range-bot-level="5"]:before {
+    top: var(--print-base-bot-level-5)
+}
+
+.syntax-analyze-main-container.print.max-level-2 .under_line[data-range-bot-level="1"]:before {
+    top: calc(var(--print-base-bot-level-1) - var(--print-base-bot-level-increment) * 1)
+}
+
+.syntax-analyze-main-container.print.max-level-2 .under_line[data-range-bot-level="2"]:before {
+    top: calc(var(--print-base-bot-level-2) - var(--print-base-bot-level-increment) * 1)
+}
+
+.syntax-analyze-main-container.print.max-level-2 .under_line[data-range-bot-level="3"]:before {
+    top: calc(var(--print-base-bot-level-3) - var(--print-base-bot-level-increment) * 1)
+}
+
+.syntax-analyze-main-container.print.max-level-2 .under_line[data-range-bot-level="4"]:before {
+    top: calc(var(--print-base-bot-level-4) - var(--print-base-bot-level-increment) * 1)
+}
+
+.syntax-analyze-main-container.print.max-level-2 .under_line[data-range-bot-level="5"]:before {
+    top: calc(var(--print-base-bot-level-5) - var(--print-base-bot-level-increment) * 1)
+}
+
+.syntax-analyze-main-container.print.max-level-3 .under_line[data-range-bot-level="1"]:before {
+    top: calc(var(--print-base-bot-level-1) - var(--print-base-bot-level-increment) * 2)
+}
+
+.syntax-analyze-main-container.print.max-level-3 .under_line[data-range-bot-level="2"]:before {
+    top: calc(var(--print-base-bot-level-2) - var(--print-base-bot-level-increment) * 2)
+}
+
+.syntax-analyze-main-container.print.max-level-3 .under_line[data-range-bot-level="3"]:before {
+    top: calc(var(--print-base-bot-level-3) - var(--print-base-bot-level-increment) * 2)
+}
+
+.syntax-analyze-main-container.print.max-level-3 .under_line[data-range-bot-level="4"]:before {
+    top: calc(var(--print-base-bot-level-4) - var(--print-base-bot-level-increment) * 2)
+}
+
+.syntax-analyze-main-container.print.max-level-3 .under_line[data-range-bot-level="5"]:before {
+    top: calc(var(--print-base-bot-level-5) - var(--print-base-bot-level-increment) * 2)
+}
+
+.syntax-analyze-main-container.print.max-level-4 .under_line[data-range-bot-level="1"]:before {
+    top: calc(var(--print-base-bot-level-1) - var(--print-base-bot-level-increment) * 3)
+}
+
+.syntax-analyze-main-container.print.max-level-4 .under_line[data-range-bot-level="2"]:before {
+    top: calc(var(--print-base-bot-level-2) - var(--print-base-bot-level-increment) * 3)
+}
+
+.syntax-analyze-main-container.print.max-level-4 .under_line[data-range-bot-level="3"]:before {
+    top: calc(var(--print-base-bot-level-3) - var(--print-base-bot-level-increment) * 3)
+}
+
+.syntax-analyze-main-container.print.max-level-4 .under_line[data-range-bot-level="4"]:before {
+    top: calc(var(--print-base-bot-level-4) - var(--print-base-bot-level-increment) * 3)
+}
+
+.syntax-analyze-main-container.print.max-level-4 .under_line[data-range-bot-level="5"]:before {
+    top: calc(var(--print-base-bot-level-5) - var(--print-base-bot-level-increment) * 3)
+}
+
+.syntax-analyze-main-container.print.max-level-5 .under_line[data-range-bot-level="1"]:before {
+    top: calc(var(--print-base-bot-level-1) - var(--print-base-bot-level-increment) * 4)
+}
+
+.syntax-analyze-main-container.print.max-level-5 .under_line[data-range-bot-level="2"]:before {
+    top: calc(var(--print-base-bot-level-2) - var(--print-base-bot-level-increment) * 4)
+}
+
+.syntax-analyze-main-container.print.max-level-5 .under_line[data-range-bot-level="3"]:before {
+    top: calc(var(--print-base-bot-level-3) - var(--print-base-bot-level-increment) * 4)
+}
+
+.syntax-analyze-main-container.print.max-level-5 .under_line[data-range-bot-level="4"]:before {
+    top: calc(var(--print-base-bot-level-4) - var(--print-base-bot-level-increment) * 4)
+}
+
+.syntax-analyze-main-container.print.max-level-5 .under_line[data-range-bot-level="5"]:before {
+    top: calc(var(--print-base-bot-level-5) - var(--print-base-bot-level-increment) * 4)
+}
+
+.syntax-analyze-main-container.print.max-level-6 .under_line[data-range-bot-level="1"]:before {
+    top: calc(var(--print-base-bot-level-1) - var(--print-base-bot-level-increment) * 5)
+}
+
+.syntax-analyze-main-container.print.max-level-6 .under_line[data-range-bot-level="2"]:before {
+    top: calc(var(--print-base-bot-level-2) - var(--print-base-bot-level-increment) * 5)
+}
+
+.syntax-analyze-main-container.print.max-level-6 .under_line[data-range-bot-level="3"]:before {
+    top: calc(var(--print-base-bot-level-3) - var(--print-base-bot-level-increment) * 5)
+}
+
+.syntax-analyze-main-container.print.max-level-6 .under_line[data-range-bot-level="4"]:before {
+    top: calc(var(--print-base-bot-level-4) - var(--print-base-bot-level-increment) * 5)
+}
+
+.syntax-analyze-main-container.print.max-level-6 .under_line[data-range-bot-level="5"]:before {
+    top: calc(var(--print-base-bot-level-5) - var(--print-base-bot-level-increment) * 5)
+}
+
+.syntax-analyze-main-container.print.max-level-7 .under_line[data-range-bot-level="1"]:before {
+    top: calc(var(--print-base-bot-level-1) - var(--print-base-bot-level-increment) * 6)
+}
+
+.syntax-analyze-main-container.print.max-level-7 .under_line[data-range-bot-level="2"]:before {
+    top: calc(var(--print-base-bot-level-2) - var(--print-base-bot-level-increment) * 6)
+}
+
+.syntax-analyze-main-container.print.max-level-7 .under_line[data-range-bot-level="3"]:before {
+    top: calc(var(--print-base-bot-level-3) - var(--print-base-bot-level-increment) * 6)
+}
+
+.syntax-analyze-main-container.print.max-level-7 .under_line[data-range-bot-level="4"]:before {
+    top: calc(var(--print-base-bot-level-4) - var(--print-base-bot-level-increment) * 6)
+}
+
+.syntax-analyze-main-container.print.max-level-7 .under_line[data-range-bot-level="5"]:before {
+    top: calc(var(--print-base-bot-level-5) - var(--print-base-bot-level-increment) * 6)
+}
+
+.syntax-analyze-main-container.print.max-level-8 .under_line[data-range-bot-level="1"]:before {
+    top: calc(var(--print-base-bot-level-1) - var(--print-base-bot-level-increment) * 7)
+}
+
+.syntax-analyze-main-container.print.max-level-8 .under_line[data-range-bot-level="2"]:before {
+    top: calc(var(--print-base-bot-level-2) - var(--print-base-bot-level-increment) * 7)
+}
+
+.syntax-analyze-main-container.print.max-level-8 .under_line[data-range-bot-level="3"]:before {
+    top: calc(var(--print-base-bot-level-3) - var(--print-base-bot-level-increment) * 7)
+}
+
+.syntax-analyze-main-container.print.max-level-8 .under_line[data-range-bot-level="4"]:before {
+    top: calc(var(--print-base-bot-level-4) - var(--print-base-bot-level-increment) * 7)
+}
+
+.syntax-analyze-main-container.print.max-level-8 .under_line[data-range-bot-level="5"]:before {
+    top: calc(var(--print-base-bot-level-5) - var(--print-base-bot-level-increment) * 7)
+}
+
+.syntax-analyze-main-container.print.max-level-9 .under_line[data-range-bot-level="1"]:before {
+    top: calc(var(--print-base-bot-level-1) - var(--print-base-bot-level-increment) * 8)
+}
+
+.syntax-analyze-main-container.print.max-level-9 .under_line[data-range-bot-level="2"]:before {
+    top: calc(var(--print-base-bot-level-2) - var(--print-base-bot-level-increment) * 8)
+}
+
+.syntax-analyze-main-container.print.max-level-9 .under_line[data-range-bot-level="3"]:before {
+    top: calc(var(--print-base-bot-level-3) - var(--print-base-bot-level-increment) * 8)
+}
+
+.syntax-analyze-main-container.print.max-level-9 .under_line[data-range-bot-level="4"]:before {
+    top: calc(var(--print-base-bot-level-4) - var(--print-base-bot-level-increment) * 8)
+}
+
+.syntax-analyze-main-container.print.max-level-9 .under_line[data-range-bot-level="5"]:before {
+    top: calc(var(--print-base-bot-level-5) - var(--print-base-bot-level-increment) * 8)
+}
+
+.syntax-analyze-main-container.print.max-level-10 .under_line[data-range-bot-level="1"]:before {
+    top: calc(var(--print-base-bot-level-1) - var(--print-base-bot-level-increment) * 9)
+}
+
+.syntax-analyze-main-container.print.max-level-10 .under_line[data-range-bot-level="2"]:before {
+    top: calc(var(--print-base-bot-level-2) - var(--print-base-bot-level-increment) * 9)
+}
+
+.syntax-analyze-main-container.print.max-level-10 .under_line[data-range-bot-level="3"]:before {
+    top: calc(var(--print-base-bot-level-3) - var(--print-base-bot-level-increment) * 9)
+}
+
+.syntax-analyze-main-container.print.max-level-10 .under_line[data-range-bot-level="4"]:before {
+    top: calc(var(--print-base-bot-level-4) - var(--print-base-bot-level-increment) * 9)
+}
+
+.syntax-analyze-main-container.print.max-level-10 .under_line[data-range-bot-level="5"]:before {
+    top: calc(var(--print-base-bot-level-5) - var(--print-base-bot-level-increment) * 9)
+}
+
+:root {
+    --print-base-top-level-1: -22px;
+    --print-base-top-level-2: -28px;
+    --print-base-top-level-3: -34px;
+    --print-base-top-level-4: -40px;
+    --print-base-top-level-5: -46px;
+    --print-base-top-level-increment: 3px;
+    --print-base-top-left: 0px;
+    --print-base-top-left-increment: 1px;
+    --print-base-arrow-top-level-1: -6px;
+    --print-base-arrow-top-level-2: -12px;
+    --print-base-arrow-top-level-3: -18px;
+    --print-base-arrow-top-level-4: -24px;
+    --print-base-arrow-top-level-5: -30px;
+    --print-base-connection-correction-value: 24px
+}
+
+.syntax-analyze-main-container.print [data-position=TOP][data-range-top-level="1"]:after {
+    left: var(--print-base-top-left)
+}
+
+.syntax-analyze-main-container.print [data-position=TOP][data-range-top-level="2"]:after {
+    left: calc(var(--print-base-top-left) - var(--print-base-top-left-increment) * 1)
+}
+
+.syntax-analyze-main-container.print [data-position=TOP][data-range-top-level="3"]:after {
+    left: calc(var(--print-base-top-left) - var(--print-base-top-left-increment) * 2)
+}
+
+.syntax-analyze-main-container.print [data-position=TOP][data-range-top-level="4"]:after {
+    left: calc(var(--print-base-top-left) - var(--print-base-top-left-increment) * 3)
+}
+
+.syntax-analyze-main-container.print [data-position=TOP][data-range-top-level="5"]:after {
+    left: calc(var(--print-base-top-left) - var(--print-base-top-left-increment) * 4)
+}
+
+.syntax-analyze-main-container.print.max-level-1 [data-position=TOP][data-range-top-level="1"]:after {
+    top: var(--print-base-top-level-1)
+}
+
+.syntax-analyze-main-container.print.max-level-1 [data-position=TOP][data-range-top-level="2"]:after {
+    top: var(--print-base-top-level-2)
+}
+
+.syntax-analyze-main-container.print.max-level-1 [data-position=TOP][data-range-top-level="3"]:after {
+    top: var(--print-base-top-level-3)
+}
+
+.syntax-analyze-main-container.print.max-level-1 [data-position=TOP][data-range-top-level="4"]:after {
+    top: var(--print-base-top-level-4)
+}
+
+.syntax-analyze-main-container.print.max-level-1 [data-position=TOP][data-range-top-level="5"]:after {
+    top: var(--print-base-top-level-5)
+}
+
+.syntax-analyze-main-container.print.max-level-2 [data-position=TOP][data-range-top-level="1"]:after {
+    top: calc(var(--print-base-top-level-1) - var(--print-base-top-level-increment) * 1)
+}
+
+.syntax-analyze-main-container.print.max-level-2 [data-position=TOP][data-range-top-level="2"]:after {
+    top: calc(var(--print-base-top-level-2) - var(--print-base-top-level-increment) * 1)
+}
+
+.syntax-analyze-main-container.print.max-level-2 [data-position=TOP][data-range-top-level="3"]:after {
+    top: calc(var(--print-base-top-level-3) - var(--print-base-top-level-increment) * 1)
+}
+
+.syntax-analyze-main-container.print.max-level-2 [data-position=TOP][data-range-top-level="4"]:after {
+    top: calc(var(--print-base-top-level-4) - var(--print-base-top-level-increment) * 1)
+}
+
+.syntax-analyze-main-container.print.max-level-2 [data-position=TOP][data-range-top-level="5"]:after {
+    top: calc(var(--print-base-top-level-5) - var(--print-base-top-level-increment) * 1)
+}
+
+.syntax-analyze-main-container.print.max-level-3 [data-position=TOP][data-range-top-level="1"]:after {
+    top: calc(var(--print-base-top-level-1) - var(--print-base-top-level-increment) * 2)
+}
+
+.syntax-analyze-main-container.print.max-level-3 [data-position=TOP][data-range-top-level="2"]:after {
+    top: calc(var(--print-base-top-level-2) - var(--print-base-top-level-increment) * 2)
+}
+
+.syntax-analyze-main-container.print.max-level-3 [data-position=TOP][data-range-top-level="3"]:after {
+    top: calc(var(--print-base-top-level-3) - var(--print-base-top-level-increment) * 2)
+}
+
+.syntax-analyze-main-container.print.max-level-3 [data-position=TOP][data-range-top-level="4"]:after {
+    top: calc(var(--print-base-top-level-4) - var(--print-base-top-level-increment) * 2)
+}
+
+.syntax-analyze-main-container.print.max-level-3 [data-position=TOP][data-range-top-level="5"]:after {
+    top: calc(var(--print-base-top-level-5) - var(--print-base-top-level-increment) * 2)
+}
+
+.syntax-analyze-main-container.print.max-level-4 [data-position=TOP][data-range-top-level="1"]:after {
+    top: calc(var(--print-base-top-level-1) - var(--print-base-top-level-increment) * 3)
+}
+
+.syntax-analyze-main-container.print.max-level-4 [data-position=TOP][data-range-top-level="2"]:after {
+    top: calc(var(--print-base-top-level-2) - var(--print-base-top-level-increment) * 3)
+}
+
+.syntax-analyze-main-container.print.max-level-4 [data-position=TOP][data-range-top-level="3"]:after {
+    top: calc(var(--print-base-top-level-3) - var(--print-base-top-level-increment) * 3)
+}
+
+.syntax-analyze-main-container.print.max-level-4 [data-position=TOP][data-range-top-level="4"]:after {
+    top: calc(var(--print-base-top-level-4) - var(--print-base-top-level-increment) * 3)
+}
+
+.syntax-analyze-main-container.print.max-level-4 [data-position=TOP][data-range-top-level="5"]:after {
+    top: calc(var(--print-base-top-level-5) - var(--print-base-top-level-increment) * 3)
+}
+
+.syntax-analyze-main-container.print.max-level-5 [data-position=TOP][data-range-top-level="1"]:after {
+    top: calc(var(--print-base-top-level-1) - var(--print-base-top-level-increment) * 4)
+}
+
+.syntax-analyze-main-container.print.max-level-5 [data-position=TOP][data-range-top-level="2"]:after {
+    top: calc(var(--print-base-top-level-2) - var(--print-base-top-level-increment) * 4)
+}
+
+.syntax-analyze-main-container.print.max-level-5 [data-position=TOP][data-range-top-level="3"]:after {
+    top: calc(var(--print-base-top-level-3) - var(--print-base-top-level-increment) * 4)
+}
+
+.syntax-analyze-main-container.print.max-level-5 [data-position=TOP][data-range-top-level="4"]:after {
+    top: calc(var(--print-base-top-level-4) - var(--print-base-top-level-increment) * 4)
+}
+
+.syntax-analyze-main-container.print.max-level-5 [data-position=TOP][data-range-top-level="5"]:after {
+    top: calc(var(--print-base-top-level-5) - var(--print-base-top-level-increment) * 4)
+}
+
+.syntax-analyze-main-container.print.max-level-6 [data-position=TOP][data-range-top-level="1"]:after {
+    top: calc(var(--print-base-top-level-1) - var(--print-base-top-level-increment) * 5)
+}
+
+.syntax-analyze-main-container.print.max-level-6 [data-position=TOP][data-range-top-level="2"]:after {
+    top: calc(var(--print-base-top-level-2) - var(--print-base-top-level-increment) * 5)
+}
+
+.syntax-analyze-main-container.print.max-level-6 [data-position=TOP][data-range-top-level="3"]:after {
+    top: calc(var(--print-base-top-level-3) - var(--print-base-top-level-increment) * 5)
+}
+
+.syntax-analyze-main-container.print.max-level-6 [data-position=TOP][data-range-top-level="4"]:after {
+    top: calc(var(--print-base-top-level-4) - var(--print-base-top-level-increment) * 5)
+}
+
+.syntax-analyze-main-container.print.max-level-6 [data-position=TOP][data-range-top-level="5"]:after {
+    top: calc(var(--print-base-top-level-5) - var(--print-base-top-level-increment) * 5)
+}
+
+.syntax-analyze-main-container.print.max-level-7 [data-position=TOP][data-range-top-level="1"]:after {
+    top: calc(var(--print-base-top-level-1) - var(--print-base-top-level-increment) * 6)
+}
+
+.syntax-analyze-main-container.print.max-level-7 [data-position=TOP][data-range-top-level="2"]:after {
+    top: calc(var(--print-base-top-level-2) - var(--print-base-top-level-increment) * 6)
+}
+
+.syntax-analyze-main-container.print.max-level-7 [data-position=TOP][data-range-top-level="3"]:after {
+    top: calc(var(--print-base-top-level-3) - var(--print-base-top-level-increment) * 6)
+}
+
+.syntax-analyze-main-container.print.max-level-7 [data-position=TOP][data-range-top-level="4"]:after {
+    top: calc(var(--print-base-top-level-4) - var(--print-base-top-level-increment) * 6)
+}
+
+.syntax-analyze-main-container.print.max-level-7 [data-position=TOP][data-range-top-level="5"]:after {
+    top: calc(var(--print-base-top-level-5) - var(--print-base-top-level-increment) * 6)
+}
+
+.syntax-analyze-main-container.print.max-level-8 [data-position=TOP][data-range-top-level="1"]:after {
+    top: calc(var(--print-base-top-level-1) - var(--print-base-top-level-increment) * 7)
+}
+
+.syntax-analyze-main-container.print.max-level-8 [data-position=TOP][data-range-top-level="2"]:after {
+    top: calc(var(--print-base-top-level-2) - var(--print-base-top-level-increment) * 7)
+}
+
+.syntax-analyze-main-container.print.max-level-8 [data-position=TOP][data-range-top-level="3"]:after {
+    top: calc(var(--print-base-top-level-3) - var(--print-base-top-level-increment) * 7)
+}
+
+.syntax-analyze-main-container.print.max-level-8 [data-position=TOP][data-range-top-level="4"]:after {
+    top: calc(var(--print-base-top-level-4) - var(--print-base-top-level-increment) * 7)
+}
+
+.syntax-analyze-main-container.print.max-level-8 [data-position=TOP][data-range-top-level="5"]:after {
+    top: calc(var(--print-base-top-level-5) - var(--print-base-top-level-increment) * 7)
+}
+
+.syntax-analyze-main-container.print.max-level-9 [data-position=TOP][data-range-top-level="1"]:after {
+    top: calc(var(--print-base-top-level-1) - var(--print-base-top-level-increment) * 8)
+}
+
+.syntax-analyze-main-container.print.max-level-9 [data-position=TOP][data-range-top-level="2"]:after {
+    top: calc(var(--print-base-top-level-2) - var(--print-base-top-level-increment) * 8)
+}
+
+.syntax-analyze-main-container.print.max-level-9 [data-position=TOP][data-range-top-level="3"]:after {
+    top: calc(var(--print-base-top-level-3) - var(--print-base-top-level-increment) * 8)
+}
+
+.syntax-analyze-main-container.print.max-level-9 [data-position=TOP][data-range-top-level="4"]:after {
+    top: calc(var(--print-base-top-level-4) - var(--print-base-top-level-increment) * 8)
+}
+
+.syntax-analyze-main-container.print.max-level-9 [data-position=TOP][data-range-top-level="5"]:after {
+    top: calc(var(--print-base-top-level-5) - var(--print-base-top-level-increment) * 8)
+}
+
+.syntax-analyze-main-container.print.max-level-10 [data-position=TOP][data-range-top-level="1"]:after {
+    top: calc(var(--print-base-top-level-1) - var(--print-base-top-level-increment) * 9)
+}
+
+.syntax-analyze-main-container.print.max-level-10 [data-position=TOP][data-range-top-level="2"]:after {
+    top: calc(var(--print-base-top-level-2) - var(--print-base-top-level-increment) * 9)
+}
+
+.syntax-analyze-main-container.print.max-level-10 [data-position=TOP][data-range-top-level="3"]:after {
+    top: calc(var(--print-base-top-level-3) - var(--print-base-top-level-increment) * 9)
+}
+
+.syntax-analyze-main-container.print.max-level-10 [data-position=TOP][data-range-top-level="4"]:after {
+    top: calc(var(--print-base-top-level-4) - var(--print-base-top-level-increment) * 9)
+}
+
+.syntax-analyze-main-container.print.max-level-10 [data-position=TOP][data-range-top-level="5"]:after {
+    top: calc(var(--print-base-top-level-5) - var(--print-base-top-level-increment) * 9)
+}
+
+.syntax-analyze-main-container.print .arrowEnd[data-range-top-level="1"]:after,.syntax-analyze-main-container.print .arrowStart[data-range-top-level="1"]:after {
+    top: var(--print-base-arrow-top-level-1)
+}
+
+.syntax-analyze-main-container.print .arrowEnd[data-range-top-level="2"]:after,.syntax-analyze-main-container.print .arrowStart[data-range-top-level="2"]:after {
+    top: var(--print-base-arrow-top-level-2)
+}
+
+.syntax-analyze-main-container.print .arrowEnd[data-range-top-level="3"]:after,.syntax-analyze-main-container.print .arrowStart[data-range-top-level="3"]:after {
+    top: var(--print-base-arrow-top-level-3)
+}
+
+.syntax-analyze-main-container.print .arrowEnd[data-range-top-level="4"]:after,.syntax-analyze-main-container.print .arrowStart[data-range-top-level="4"]:after {
+    top: var(--print-base-arrow-top-level-4)
+}
+
+.syntax-analyze-main-container.print .arrowEnd[data-range-top-level="5"]:after,.syntax-analyze-main-container.print .arrowStart[data-range-top-level="5"]:after {
+    top: var(--print-base-arrow-top-level-5)
+}
+
+.syntax-analyze-main-container.print .arrow-connections line[data-range-top-level="1"] {
+    transform: translateY(calc(var(--print-base-arrow-top-level-1) + var(--print-base-connection-correction-value)))
+}
+
+.syntax-analyze-main-container.print .arrow-connections line[data-range-top-level="2"] {
+    transform: translateY(calc(var(--print-base-arrow-top-level-2) + var(--print-base-connection-correction-value)))
+}
+
+.syntax-analyze-main-container.print .arrow-connections line[data-range-top-level="3"] {
+    transform: translateY(calc(var(--print-base-arrow-top-level-3) + var(--print-base-connection-correction-value)))
+}
+
+.syntax-analyze-main-container.print .arrow-connections line[data-range-top-level="4"] {
+    transform: translateY(calc(var(--print-base-arrow-top-level-4) + var(--print-base-connection-correction-value)))
+}
+
+.syntax-analyze-main-container.print .arrow-connections line[data-range-top-level="5"] {
+    transform: translateY(calc(var(--print-base-arrow-top-level-5) + var(--print-base-connection-correction-value)))
+}
+
+.print-page-container {
+    font-family: Pretendard
+}
+
+.print-card-container {
+    height: auto!important
+}
+
+.print-card-number {
+    display: flex;
+    width: 14px;
+    height: 14px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    aspect-ratio: 1/1;
+    border-radius: 2px;
+    background: #5a6b7b
+}
+
+.print-card-number-text {
+    color: #fff;
+    text-align: center;
+    font-size: 10px;
+    font-weight: 700
+}
+
+.print-card-content,.print-page-container {
+    width: 100%
+}
+
+.print-content-wrapper {
+    box-shadow: 0 25px 50px -12px rgba(0,0,0,.25);
+    width: 100%;
+    margin: 0 auto;
+    background-color: #fff;
+    color: #000;
+    position: relative
+}
+
+.print-no-data {
+    text-align: center;
+    color: #6b7280
+}
+
+.print-syntax-item {
+    width: 100%;
+    page-break-inside: avoid
+}
+
+.print-syntax-card {
+    margin-bottom: 16px;
+    page-break-inside: avoid
+}
+
+.print-card-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    page-break-inside: avoid
+}
+
+.print-card-header {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center
+}
+
+.print-card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px
+}
+
+.print-analyze-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px
+}
+
+.print-analyze-content {
+    display: flex;
+    flex-direction: row;
+    width: 521px;
+    gap: 10px;
+    height: 100%;
+    page-break-inside: avoid
+}
+
+.print-analyze-span-wrapper {
+    display: flex;
+    flex-direction: column
+}
+
+.print-analyze-translation {
+    width: 100%
+}
+
+.print-analyze-translation-text {
+    font-family: Pretendard;
+    font-weight: 400;
+    font-size: 9px;
+    color: #555
+}
+
+.print-analysis-container {
+    width: 100%;
+    border-radius: 3px;
+    border: 1px solid #555;
+    opacity: .9
+}
+
+.print-analysis-wrapper {
+    display: flex;
+    flex-direction: column;
+    padding: 8px
+}
+
+.print-analysis-content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 5px;
+    font-size: 9px
+}
+
+.print-icon-star {
+    width: 7px;
+    height: 7px;
+    display: block
+}
+
+.print-icon-dot {
+    width: 4px;
+    height: 4px;
+    display: block
+}
+
+.print-explanation-item {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 7px
+}
+
+.print-explanation-item-interactive {
+    cursor: pointer;
+    border-radius: 3px
+}
+
+.print-explanation-item-interactive:hover {
+    background-color: #f9fafb
+}
+
+.print-explanation-icon {
+    width: 9px;
+    height: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin: 0
+}
+
+.print-explanation-text {
+    font-family: Pretendard;
+    font-weight: 400;
+    color: #222;
+    font-size: 9px;
+    line-height: 160%;
+    margin: 0;
+    padding: 0
+}
+
+.print-explanation-text-picked {
+    color: #3b82f6
+}

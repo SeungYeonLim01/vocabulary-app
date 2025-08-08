@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>단어장 상세</title>
+    
+    <!-- CSS 파일들 연결 -->
+    <link rel="stylesheet" href="0acef4df005bbe6c.css">
+    <link rel="stylesheet" href="26f77046fab6335d.css">
+    <link rel="stylesheet" href="9b9b8286a1944f60.css">
+    <link rel="stylesheet" href="ddfd84d4766fc38f.css">
+    <link rel="stylesheet" href="e2cf08a32e0ac885.css">
+    
+    <style>
+        /* Google Fonts Noto Sans KR, Roboto 불러오기 */
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=Roboto:wght@400;700&display=swap');
+
+        /* 기본 스타일 */
+        :root {
+            --primary-color: #0056b3;
+            --light-gray-bg: #f8f9fa;
+            --border-color: #e9ecef;
+            --text-color: #212529;
+            --sub-text-color: #6c757d;
+        }
+
+        body {
+            font-family: 'Noto Sans KR', 'Roboto', sans-serif;
+            background-color: #fff;
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 100%;
+            margin: 0 auto;
+            background-color: #ffffff;
+        }
+
+        /* 헤더 스타일 */
+        .header {
+            background-color: rgb(250, 251, 252);
+            padding: 20px;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .back-button {
+            background: none;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+            color: var(--text-color);
+            padding: 5px;
+            border-radius: 4px;
+            transition: background-color 0.2s;
+        }
+
+        .back-button:hover {
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+
+        .header-title {
+            font-size: 24px;
+            font-weight: 700;
+            margin: 0;
+            color: var(--text-color);
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        .pick-button, .download-button {
+            padding: 8px 16px;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            background-color: #fff;
+            cursor: pointer;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .download-button {
+            background-color: rgb(59, 130, 246);
+            color: #fff;
+            border-color: rgb(59, 130, 246);
+        }
+
+        .pick-button:hover {
+            background-color: var(--light-gray-bg);
+        }
+
+        .download-button:hover {
+            background-color: rgb(37, 99, 235);
+        }
+
+        /* 메인 콘텐츠 영역 */
+        .main-content {
+            display: flex;
+            height: calc(100vh - 80px);
+        }
+
+        /* 왼쪽 사이드바 */
+        .sidebar {
+            width: 300px;
+            background-color: #fff;
+            border-right: 1px solid var(--border-color);
+            padding: 20px;
+        }
+
+        .difficulty-section {
+            margin-bottom: 30px;
+        }
+
+        .difficulty-title {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--text-color);
+        }
+
+        .difficulty-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .difficulty-button {
+            padding: 10px 15px;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            background-color: #fff;
+            cursor: pointer;
+            text-align: left;
+            font-size: 14px;
+            transition: all 0.2s;
+        }
+
+        .difficulty-button.active {
+            background-color: var(--primary-color);
+            color: #fff;
+            border-color: var(--primary-color);
+        }
+
+        .difficulty-button:hover:not(.active) {
+            background-color: var(--light-gray-bg);
+        }
+
+        .total-section {
+            margin-top: 30px;
+        }
+
+        .total-title {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--text-color);
+        }
+
+        .word-item {
+            padding: 10px;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            margin-bottom: 8px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background-color: #fff;
+        }
+
+        .word-item:hover {
+            background-color: var(--light-gray-bg);
+        }
+
+        .word-item.active {
+            background-color: var(--primary-color);
+            color: #fff;
+            border-color: var(--primary-color);
+        }
+
+        .word-icon {
+            width: 16px;
+            height: 16px;
+            background-color: var(--sub-text-color);
+            border-radius: 2px;
+        }
+
+        /* 오른쪽 단어장 영역 */
+        .vocab-content {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+        .vocab-list {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .vocab-entry {
+            display: flex;
+            padding: 25px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .word-column {
+            flex: 0 0 200px;
+            padding-right: 25px;
+        }
+
+        .word {
+            font-weight: 700;
+            font-size: 26px;
+            font-family: 'Roboto', sans-serif;
+            color: var(--primary-color);
+        }
+        
+        .details-column {
+            flex: 1;
+            padding-left: 25px;
+            border-left: 1px solid var(--border-color);
+        }
+
+        .meaning-info {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .pos {
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--text-color);
+            background-color: #e9ecef;
+            padding: 4px 10px;
+            border-radius: 14px;
+        }
+
+        .meaning {
+            font-size: 18px;
+            font-weight: 500;
+            margin-left: 12px;
+        }
+
+        .example-block {
+            background-color: var(--light-gray-bg);
+            padding: 15px;
+            border-radius: 8px;
+            font-size: 15px;
+        }
+
+        .example-en {
+            display: block;
+            margin-bottom: 6px;
+            color: var(--text-color);
+        }
+
+        .example-ko {
+            display: block;
+            color: var(--sub-text-color);
+            font-size: 14px;
+        }
+
+        .edit-icon {
+            width: 16px;
+            height: 16px;
+            background-color: var(--sub-text-color);
+            border-radius: 2px;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 헤더 -->
+        <div class="header">
+            <div class="header-left">
+                <button class="back-button" onclick="history.back()">
+                    &lt;
+                </button>
+                <h1 class="header-title" id="headerTitle">로딩 중...</h1>
+            </div>
+            <div class="header-actions">
+                <button class="pick-button">
+                    ☆ Pick
+                </button>
+                <button class="download-button">
+                    다운로드
+                </button>
+            </div>
+        </div>
+
+        <!-- 메인 콘텐츠 -->
+        <div class="main-content">
+            <!-- 왼쪽 사이드바 -->
+            <div class="sidebar">
+                <div class="difficulty-section">
+                    <h3 class="difficulty-title">분석 난이도</h3>
+                    <div class="difficulty-buttons">
+                        <button class="difficulty-button">초등</button>
+                        <button class="difficulty-button active">중등기초</button>
+                        <button class="difficulty-button active">중등심화</button>
+                        <button class="difficulty-button">고등</button>
+                    </div>
+                </div>
+                
+                <div class="total-section">
+                    <h3 class="total-title">총 1개</h3>
+                    <div class="word-item active">
+                        <div class="word-icon"></div>
+                        <span>1 The purpose of class discu...</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 오른쪽 단어장 -->
+            <div class="vocab-content">
+                <div class="vocab-list" id="vocabList">
+                    <!-- 단어 목록이 여기에 동적으로 생성됩니다 -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // URL에서 ID 파라미터 가져오기
+        const urlParams = new URLSearchParams(window.location.search);
+        const id = urlParams.get('id');
+        
+        // ID에 따른 데이터
+        const data = {
+            '1': {
+                title: '2024학년도 랜덤 1학년 1학기 중간고사 단어장',
+                words: []
+            },
+            '2': {
+                title: '2025학년도 ㅇㅎ중학교 1학년 1학기 중간고사 단어장',
+                words: [
+                    { 
+                        word: 'apple', 
+                        pos: '명', 
+                        meaning: '사과',
+                        exampleEn: 'I eat an apple every day.',
+                        exampleKo: '나는 매일 사과를 먹는다.'
+                    },
+                    { 
+                        word: 'book', 
+                        pos: '명', 
+                        meaning: '책',
+                        exampleEn: 'I read a book before bed.',
+                        exampleKo: '나는 잠자기 전에 책을 읽는다.'
+                    },
+                    { 
+                        word: 'cat', 
+                        pos: '명', 
+                        meaning: '고양이',
+                        exampleEn: 'The cat is sleeping on the sofa.',
+                        exampleKo: '고양이가 소파에서 자고 있다.'
+                    },
+                    { 
+                        word: 'dog', 
+                        pos: '명', 
+                        meaning: '개',
+                        exampleEn: 'The dog is running in the park.',
+                        exampleKo: '개가 공원에서 뛰고 있다.'
+                    },
+                    { 
+                        word: 'elephant', 
+                        pos: '명', 
+                        meaning: '코끼리',
+                        exampleEn: 'Elephants are very intelligent animals.',
+                        exampleKo: '코끼리는 매우 지능적인 동물이다.'
+                    },
+                    { 
+                        word: 'flower', 
+                        pos: '명', 
+                        meaning: '꽃',
+                        exampleEn: 'She loves to grow flowers in her garden.',
+                        exampleKo: '그녀는 정원에서 꽃을 기르는 것을 좋아한다.'
+                    }
+                ]
+            },
+            '3': {
+                title: '2023학년도 유형고등학교 1학년 1학기 중간고사 단어장',
+                words: [
+                    { 
+                        word: 'computer', 
+                        pos: '명', 
+                        meaning: '컴퓨터',
+                        exampleEn: 'I use my computer to work.',
+                        exampleKo: '나는 일하기 위해 컴퓨터를 사용한다.'
+                    },
+                    { 
+                        word: 'internet', 
+                        pos: '명', 
+                        meaning: '인터넷',
+                        exampleEn: 'The internet has changed our lives.',
+                        exampleKo: '인터넷은 우리의 삶을 바꾸었다.'
+                    },
+                    { 
+                        word: 'program', 
+                        pos: '명', 
+                        meaning: '프로그램',
+                        exampleEn: 'This program helps students learn.',
+                        exampleKo: '이 프로그램은 학생들이 학습하는 데 도움이 된다.'
+                    },
+                    { 
+                        word: 'software', 
+                        pos: '명', 
+                        meaning: '소프트웨어',
+                        exampleEn: 'The software needs to be updated.',
+                        exampleKo: '소프트웨어를 업데이트해야 한다.'
+                    },
+                    { 
+                        word: 'hardware', 
+                        pos: '명', 
+                        meaning: '하드웨어',
+                        exampleEn: 'Computer hardware is expensive.',
+                        exampleKo: '컴퓨터 하드웨어는 비싸다.'
+                    },
+                    { 
+                        word: 'database', 
+                        pos: '명', 
+                        meaning: '데이터베이스',
+                        exampleEn: 'The database stores all the information.',
+                        exampleKo: '데이터베이스는 모든 정보를 저장한다.'
+                    },
+                    { 
+                        word: 'algorithm', 
+                        pos: '명', 
+                        meaning: '알고리즘',
+                        exampleEn: 'This algorithm solves the problem efficiently.',
+                        exampleKo: '이 알고리즘은 문제를 효율적으로 해결한다.'
+                    },
+                    { 
+                        word: 'network', 
+                        pos: '명', 
+                        meaning: '네트워크',
+                        exampleEn: 'The network connects all computers.',
+                        exampleKo: '네트워크는 모든 컴퓨터를 연결한다.'
+                    },
+                    { 
+                        word: 'server', 
+                        pos: '명', 
+                        meaning: '서버',
+                        exampleEn: 'The server processes all requests.',
+                        exampleKo: '서버는 모든 요청을 처리한다.'
+                    },
+                    { 
+                        word: 'client', 
+                        pos: '명', 
+                        meaning: '클라이언트',
+                        exampleEn: 'The client sends data to the server.',
+                        exampleKo: '클라이언트는 서버에 데이터를 보낸다.'
+                    }
+                ]
+            },
+            '4': {
+                title: '2024학년도 랜덤1중학교 1학년 1학기 중간고사 단어장',
+                words: [
+                    { 
+                        word: 'student', 
+                        pos: '명', 
+                        meaning: '학생',
+                        exampleEn: 'The student studies hard every day.',
+                        exampleKo: '학생은 매일 열심히 공부한다.'
+                    },
+                    { 
+                        word: 'teacher', 
+                        pos: '명', 
+                        meaning: '선생님',
+                        exampleEn: 'The teacher explains the lesson clearly.',
+                        exampleKo: '선생님은 수업을 명확하게 설명한다.'
+                    },
+                    { 
+                        word: 'school', 
+                        pos: '명', 
+                        meaning: '학교',
+                        exampleEn: 'I go to school by bus.',
+                        exampleKo: '나는 버스를 타고 학교에 간다.'
+                    },
+                    { 
+                        word: 'classroom', 
+                        pos: '명', 
+                        meaning: '교실',
+                        exampleEn: 'The classroom is clean and bright.',
+                        exampleKo: '교실은 깨끗하고 밝다.'
+                    },
+                    { 
+                        word: 'homework', 
+                        pos: '명', 
+                        meaning: '숙제',
+                        exampleEn: 'I need to finish my homework.',
+                        exampleKo: '나는 숙제를 끝내야 한다.'
+                    },
+                    { 
+                        word: 'exam', 
+                        pos: '명', 
+                        meaning: '시험',
+                        exampleEn: 'The exam is next week.',
+                        exampleKo: '시험은 다음 주에 있다.'
+                    }
+                ]
+            },
+            '5': {
+                title: '2025학년도 유형끼리중학교 1학년 1학기 중간고사 단어장',
+                words: [
+                    { 
+                        word: 'science', 
+                        pos: '명', 
+                        meaning: '과학',
+                        exampleEn: 'Science helps us understand the world.',
+                        exampleKo: '과학은 우리가 세상을 이해하는 데 도움이 된다.'
+                    },
+                    { 
+                        word: 'mathematics', 
+                        pos: '명', 
+                        meaning: '수학',
+                        exampleEn: 'Mathematics is my favorite subject.',
+                        exampleKo: '수학은 내가 가장 좋아하는 과목이다.'
+                    },
+                    { 
+                        word: 'history', 
+                        pos: '명', 
+                        meaning: '역사',
+                        exampleEn: 'History teaches us about the past.',
+                        exampleKo: '역사는 우리에게 과거에 대해 가르친다.'
+                    },
+                    { 
+                        word: 'geography', 
+                        pos: '명', 
+                        meaning: '지리',
+                        exampleEn: 'Geography studies the Earth\'s surface.',
+                        exampleKo: '지리는 지구의 표면을 연구한다.'
+                    }
+                ]
+            }
+        };
+        
+        // 페이지 로드 시 데이터 표시
+        window.onload = function() {
+            const itemData = data[id] || {
+                title: '알 수 없는 단어장',
+                words: []
+            };
+            
+            document.getElementById('headerTitle').textContent = itemData.title;
+            
+            const vocabList = document.getElementById('vocabList');
+            
+            if (itemData.words.length === 0) {
+                vocabList.innerHTML = '<div style="text-align: center; padding: 40px; color: var(--sub-text-color);">등록된 단어가 없습니다.</div>';
+            } else {
+                vocabList.innerHTML = itemData.words.map(word => 
+                    `<div class="vocab-entry">
+                        <div class="word-column">
+                            <span class="word">${word.word}</span>
+                            <div class="edit-icon"></div>
+                        </div>
+                        <div class="details-column">
+                            <div class="meaning-info">
+                                <span class="pos">${word.pos}</span>
+                                <span class="meaning">${word.meaning}</span>
+                            </div>
+                            <div class="example-block">
+                                <span class="example-en">${word.exampleEn}</span>
+                                <span class="example-ko">${word.exampleKo}</span>
+                            </div>
+                        </div>
+                    </div>`
+                ).join('');
+            }
+        };
+    </script>
+</body>
+</html>
