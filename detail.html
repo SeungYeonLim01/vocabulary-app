@@ -135,25 +135,28 @@
 
         .difficulty-buttons {
             display: flex;
-            flex-direction: column;
-            gap: 8px;
+            flex-direction: row;
+            gap: 4px;
+            flex-wrap: nowrap;
         }
 
         .difficulty-button {
-            padding: 10px 15px;
+            padding: 2px 6px;
             border: 1px solid var(--border-color);
             border-radius: 4px;
             background-color: #fff;
             cursor: pointer;
-            text-align: left;
-            font-size: 14px;
+            text-align: center;
+            font-size: 12px;
             transition: all 0.2s;
+            white-space: nowrap;
+            color: var(--sub-text-color);
         }
 
         .difficulty-button.active {
-            background-color: var(--primary-color);
+            background-color: rgb(59, 130, 246);
             color: #fff;
-            border-color: var(--primary-color);
+            border-color: rgb(59, 130, 246);
         }
 
         .difficulty-button:hover:not(.active) {
@@ -181,24 +184,16 @@
             align-items: center;
             gap: 10px;
             background-color: #fff;
+            transition: all 0.2s;
         }
 
         .word-item:hover {
             background-color: var(--light-gray-bg);
         }
 
-        .word-item.active {
-            background-color: var(--primary-color);
-            color: #fff;
-            border-color: var(--primary-color);
-        }
 
-        .word-icon {
-            width: 16px;
-            height: 16px;
-            background-color: var(--sub-text-color);
-            border-radius: 2px;
-        }
+
+
 
         /* 오른쪽 단어장 영역 */
         .vocab-content {
@@ -276,14 +271,7 @@
             font-size: 14px;
         }
 
-        .edit-icon {
-            width: 16px;
-            height: 16px;
-            background-color: var(--sub-text-color);
-            border-radius: 2px;
-            margin-left: 10px;
-            cursor: pointer;
-        }
+
     </style>
 </head>
 <body>
@@ -312,20 +300,22 @@
             <div class="sidebar">
                 <div class="difficulty-section">
                     <h3 class="difficulty-title">분석 난이도</h3>
-                    <div class="difficulty-buttons">
-                        <button class="difficulty-button">초등</button>
-                        <button class="difficulty-button active">중등기초</button>
-                        <button class="difficulty-button active">중등심화</button>
-                        <button class="difficulty-button">고등</button>
-                    </div>
+                                         <div class="difficulty-buttons">
+                         <button class="difficulty-button active" data-level="초등">중등 기본</button>
+                         <button class="difficulty-button" data-level="중등기초">수능 기본</button>
+                         <button class="difficulty-button active" data-level="중등심화">수능 필수</button>
+                         <button class="difficulty-button active" data-level="고등">수능 고급</button>
+                     </div>
                 </div>
                 
                 <div class="total-section">
-                    <h3 class="total-title">총 1개</h3>
-                    <div class="word-item active">
-                        <div class="word-icon"></div>
-                        <span>1 The purpose of class discu...</span>
-                    </div>
+                    <h3 class="total-title">총 2개</h3>
+                                         <div class="word-item">
+                         <span>1 To grow into a better versi...</span>
+                     </div>
+                     <div class="word-item">
+                         <span>2 These days, I tend to watc...</span>
+                     </div>
                 </div>
             </div>
 
@@ -343,59 +333,89 @@
         const urlParams = new URLSearchParams(window.location.search);
         const id = urlParams.get('id');
         
-        // ID에 따른 데이터
-        const data = {
-            '1': {
-                title: '2024학년도 랜덤 1학년 1학기 중간고사 단어장',
-                words: []
-            },
-            '2': {
-                title: '2025학년도 ㅇㅎ중학교 1학년 1학기 중간고사 단어장',
-                words: [
-                    { 
-                        word: 'apple', 
-                        pos: '명', 
-                        meaning: '사과',
-                        exampleEn: 'I eat an apple every day.',
-                        exampleKo: '나는 매일 사과를 먹는다.'
-                    },
-                    { 
-                        word: 'book', 
-                        pos: '명', 
-                        meaning: '책',
-                        exampleEn: 'I read a book before bed.',
-                        exampleKo: '나는 잠자기 전에 책을 읽는다.'
-                    },
-                    { 
-                        word: 'cat', 
-                        pos: '명', 
-                        meaning: '고양이',
-                        exampleEn: 'The cat is sleeping on the sofa.',
-                        exampleKo: '고양이가 소파에서 자고 있다.'
-                    },
-                    { 
-                        word: 'dog', 
-                        pos: '명', 
-                        meaning: '개',
-                        exampleEn: 'The dog is running in the park.',
-                        exampleKo: '개가 공원에서 뛰고 있다.'
-                    },
-                    { 
-                        word: 'elephant', 
-                        pos: '명', 
-                        meaning: '코끼리',
-                        exampleEn: 'Elephants are very intelligent animals.',
-                        exampleKo: '코끼리는 매우 지능적인 동물이다.'
-                    },
-                    { 
-                        word: 'flower', 
-                        pos: '명', 
-                        meaning: '꽃',
-                        exampleEn: 'She loves to grow flowers in her garden.',
-                        exampleKo: '그녀는 정원에서 꽃을 기르는 것을 좋아한다.'
-                    }
-                ]
-            },
+                 // ID에 따른 데이터
+         const data = {
+             '1': {
+                 title: '2024학년도 랜덤 1학년 1학기 중간고사 단어장',
+                 words: []
+             },
+             '2': {
+                 title: '2025학년도 ㅇㅎ중학교 1학년 1학기 중간고사 단어장',
+                 words: [
+                     { 
+                         word: 'apple', 
+                         pos: '명', 
+                         meaning: '사과',
+                         level: '초등',
+                         exampleEn: 'I eat an apple every day.',
+                         exampleKo: '나는 매일 사과를 먹는다.'
+                     },
+                     { 
+                         word: 'book', 
+                         pos: '명', 
+                         meaning: '책',
+                         level: '초등',
+                         exampleEn: 'I read a book before bed.',
+                         exampleKo: '나는 잠자기 전에 책을 읽는다.'
+                     },
+                     { 
+                         word: 'cat', 
+                         pos: '명', 
+                         meaning: '고양이',
+                         level: '초등',
+                         exampleEn: 'The cat is sleeping on the sofa.',
+                         exampleKo: '고양이가 소파에서 자고 있다.'
+                     },
+                     { 
+                         word: 'dog', 
+                         pos: '명', 
+                         meaning: '개',
+                         level: '중등기초',
+                         exampleEn: 'The dog is running in the park.',
+                         exampleKo: '개가 공원에서 뛰고 있다.'
+                     },
+                     { 
+                         word: 'elephant', 
+                         pos: '명', 
+                         meaning: '코끼리',
+                         level: '중등심화',
+                         exampleEn: 'Elephants are very intelligent animals.',
+                         exampleKo: '코끼리는 매우 지능적인 동물이다.'
+                     },
+                                           { 
+                          word: 'flower', 
+                          pos: '명', 
+                          meaning: '꽃',
+                          level: '고등',
+                          exampleEn: 'She loves to grow flowers in her garden.',
+                          exampleKo: '그녀는 정원에서 꽃을 기르는 것을 좋아한다.'
+                      },
+                      { 
+                          word: 'run', 
+                          pos: '동', 
+                          meaning: '뛰다, 달리다',
+                          level: '중등기초',
+                          exampleEn: 'I run every morning to stay healthy.',
+                          exampleKo: '나는 건강을 유지하기 위해 매일 아침 뛴다.'
+                      },
+                      { 
+                          word: 'run', 
+                          pos: '동', 
+                          meaning: '운영하다, 관리하다',
+                          level: '중등심화',
+                          exampleEn: 'She runs a successful business.',
+                          exampleKo: '그녀는 성공적인 사업을 운영한다.'
+                      },
+                      { 
+                          word: 'run', 
+                          pos: '명', 
+                          meaning: '달리기, 경주',
+                          level: '고등',
+                          exampleEn: 'The marathon is a long run.',
+                          exampleKo: '마라톤은 긴 달리기이다.'
+                      }
+                 ]
+             },
             '3': {
                 title: '2023학년도 유형고등학교 1학년 1학기 중간고사 단어장',
                 words: [
@@ -553,40 +573,85 @@
             }
         };
         
-        // 페이지 로드 시 데이터 표시
-        window.onload = function() {
-            const itemData = data[id] || {
-                title: '알 수 없는 단어장',
-                words: []
-            };
-            
-            document.getElementById('headerTitle').textContent = itemData.title;
-            
-            const vocabList = document.getElementById('vocabList');
-            
-            if (itemData.words.length === 0) {
-                vocabList.innerHTML = '<div style="text-align: center; padding: 40px; color: var(--sub-text-color);">등록된 단어가 없습니다.</div>';
-            } else {
-                vocabList.innerHTML = itemData.words.map(word => 
-                    `<div class="vocab-entry">
-                        <div class="word-column">
-                            <span class="word">${word.word}</span>
-                            <div class="edit-icon"></div>
-                        </div>
-                        <div class="details-column">
-                            <div class="meaning-info">
-                                <span class="pos">${word.pos}</span>
-                                <span class="meaning">${word.meaning}</span>
-                            </div>
-                            <div class="example-block">
-                                <span class="example-en">${word.exampleEn}</span>
-                                <span class="example-ko">${word.exampleKo}</span>
-                            </div>
-                        </div>
-                    </div>`
-                ).join('');
-            }
-        };
+                 // 활성화된 난이도 레벨들
+         let activeLevels = ['초등', '중등심화', '고등'];
+         
+         // 페이지 로드 시 데이터 표시
+         window.onload = function() {
+             const itemData = data[id] || {
+                 title: '알 수 없는 단어장',
+                 words: []
+             };
+             
+             document.getElementById('headerTitle').textContent = itemData.title;
+             
+             // 난이도 버튼 클릭 이벤트 추가
+             document.querySelectorAll('.difficulty-button').forEach(button => {
+                 button.addEventListener('click', function() {
+                     const level = this.getAttribute('data-level');
+                     
+                     if (this.classList.contains('active')) {
+                         // 비활성화
+                         this.classList.remove('active');
+                         activeLevels = activeLevels.filter(l => l !== level);
+                     } else {
+                         // 활성화
+                         this.classList.add('active');
+                         activeLevels.push(level);
+                     }
+                     
+                     // 단어 목록 업데이트
+                     updateWordList(itemData.words);
+                 });
+             });
+             
+             // 초기 단어 목록 표시
+             updateWordList(itemData.words);
+         };
+         
+         // 단어 목록 업데이트 함수
+         function updateWordList(allWords) {
+             const vocabList = document.getElementById('vocabList');
+             
+             if (allWords.length === 0) {
+                 vocabList.innerHTML = '<div style="text-align: center; padding: 40px; color: var(--sub-text-color);">등록된 단어가 없습니다.</div>';
+             } else {
+                 // 활성화된 레벨의 단어만 필터링
+                 const filteredWords = allWords.filter(word => activeLevels.includes(word.level));
+                 
+                                   // 같은 단어들을 그룹화
+                  const wordGroups = {};
+                  filteredWords.forEach(word => {
+                      if (!wordGroups[word.word]) {
+                          wordGroups[word.word] = [];
+                      }
+                      wordGroups[word.word].push(word);
+                  });
+                  
+                  vocabList.innerHTML = Object.values(wordGroups).map(wordGroup => {
+                      const firstWord = wordGroup[0];
+                      const meaningsHtml = wordGroup.map(word => 
+                          `<div class="meaning-info">
+                              <span class="pos">${word.pos}</span>
+                              <span class="meaning">${word.meaning}</span>
+                          </div>`
+                      ).join('');
+                      
+                      return `<div class="vocab-entry">
+                          <div class="word-column">
+                              <span class="word">${firstWord.word}</span>
+                          </div>
+                          <div class="details-column">
+                              ${meaningsHtml}
+                              <div class="example-block">
+                                  <span class="example-en">${firstWord.exampleEn}</span>
+                                  <span class="example-ko">${firstWord.exampleKo}</span>
+                              </div>
+                          </div>
+                      </div>`;
+                  }).join('');
+             }
+         }
     </script>
 </body>
 </html>
